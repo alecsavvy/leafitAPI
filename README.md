@@ -25,3 +25,6 @@ planttojson.py doesn't actually create any json files. That was however its orig
 
 #plantsort.py
 The parsing of plantGuide.txt is done here. It separates the text into dictionaries based on a numerical key. The dictionary is then sorted into Plant objects which are eventually converted into a json-like format for the api to broadcast.
+
+#plantGuide.txt
+sourced from http://pages.uoregon.edu/ecostudy/elp/hendricks/pdf_files/PlantGuide.pdf.
