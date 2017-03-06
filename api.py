@@ -1,9 +1,15 @@
-#!leafitAPI/bin/
+#!leafitAPI/
+import socket as s
 from flask import Flask, jsonify
 from flask import abort
 from flask import make_response
 from flask import request
 from flask import url_for
+
+if s.gethostbyname(s.getfqdn()) == "127.0.0.1":
+    ip = input("enter your ip address: ")
+else:
+    ip = s.gethostbyname(s.getfqdn())
 
 app = Flask(__name__)
 
@@ -70,5 +76,5 @@ def not_found(error):
     return make_response(jsonify({'error': 'not found'}), 404)
 
 if __name__ == "__main__":
-    app.run(host='10.111.236.230')
+    app.run(host=ip, port=5000, debug=True)
 
