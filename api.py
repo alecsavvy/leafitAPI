@@ -1,32 +1,24 @@
 #!leafitAPI/
-import socket as s
-from flask import Flask, jsonify
-from flask import abort
-from flask import make_response
-from flask import request
-from flask import url_for
 
-if s.gethostbyname(s.getfqdn()) == "127.0.0.1":
-    ip = input("enter your ip address: ")
-else:
-    ip = s.gethostbyname(s.getfqdn())
+# will run everything from this file
+
+import socket as s
+from flask import Flask, jsonify, abort, make_response, request, url_for
+import planttojson as ptj
+
+
+def get_ip():
+    if s.gethostbyname(s.getfqdn()) == "127.0.0.1":
+        ip = input("enter your ip address: ")
+    else:
+        ip = s.gethostbyname(s.getfqdn())
+    return ip
 
 app = Flask(__name__)
 
-tasks = [
-    {
-        'id': 1,
-        'title': u'Buy groceries',
-        'description': u'Milk, Cheese',
-        'done': False
-    },
-    {
-        'id': 2,
-        'title': u'Learn Python',
-        'description': u'Need to find a good Python Tutorial',
-        'done': False
-    }
-]
+
+ptj.run()
+tasks = ptj.tasks
 
 
 def make_public_task(task):
@@ -76,5 +68,6 @@ def not_found(error):
     return make_response(jsonify({'error': 'not found'}), 404)
 
 if __name__ == "__main__":
+    ip = get_ip()
     app.run(host=ip, port=5000, debug=True)
 
