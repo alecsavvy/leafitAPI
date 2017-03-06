@@ -1,7 +1,7 @@
 # leafitAPI
 Rest API for the Leafit Application
 
-***Before anything else, Flask is required to run this api so I would advise you install that before attempting to run*** 
+***Before anything else, Flask is required to run this api so I would advise you install that before attempting to run.*** 
 
 Since I am running this locally the IP address of the server is subject to change. To run the api you just run api.py from the terminal like so. The api will not be accessible if your server name ends up as 127.0.0.1. I have a test that searches for the IP address built in but if it doesn't find one it will prompt you to input one. You can find these with ifconfig (unix and mac) or ipconfig (windows). 
 
