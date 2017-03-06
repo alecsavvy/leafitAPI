@@ -8,7 +8,15 @@ Since I am running this locally the IP address of the server is subject to chang
     cd (pathto)/leafitAPI 
     
     leafitAPI user$ python3 api.py
-    
+     * Running on http://xxx.xxx.x.x:5000/ (Press CTRL+C to quit)
+     * Restarting with stat
+
+     * Debugger is active!
+     * Debugger pin code: 234-359-317
+
+
+You can access each plants info at 
+http:// xxx.xxx.x.x:5000/(id), where id is a specific int given to every plant. This is accessible from any browser on the same network and in this specific case, a mobile app.
 #api.py
 This is where the api is built and the other two files are run from. I have yet to put some authentication into it.
 
