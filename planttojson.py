@@ -19,14 +19,14 @@ def main():
     plants = plantsort.plants
     counter = 1
     for plant in plants:
-        info = plants[0].get_sorted()
+        info = plant.sorted_des
         d = {"id": counter,
              "Name": plant.get_name(),
-             "General Botanical Characteristics": info[title[0]][0],
-             "Distribution/Habitat": info[title[1]][0],
-             "Seasonal Development": info[title[2]][0],
-             "Interesting Facts": info[title[3]][0],
-             "References": info[title[4]][0]
+             "General Botanical Characteristics": info[title[0]],
+             "Distribution/Habitat": info[title[1]],
+             "Seasonal Development": info[title[2]],
+             "Interesting Facts": info[title[3]],
+             "References": info[title[4]]
              }
         tasks.append(d)
         counter += 1
