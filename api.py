@@ -36,7 +36,7 @@ def make_public_task(task):
 #     return jsonify({'tasks': map(make_public_task, tasks)})
 
 
-@app.route('/', methods=['POST'])
+@app.route('/post', methods=['POST'])
 def create_task():
     if not request.json not in 'title' in request.json:
         abort(400)
@@ -55,7 +55,7 @@ def get_tasks(task_id):
     task = [task for task in tasks if task['id'] == task_id]
     if len(task) == 0:
         abort(404)
-    return jsonify({'task': task[0]})
+    return jsonify(task[0])
 
 
 @app.errorhandler(400)
